@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Form from "./Form";
 import Result from "./Result";
 
-function App() {
-  return (
-    <div className="App">
-        <Form />
-        <Result />
-    </div>
-  );
+class App extends Component {
+
+    state ={
+      value : ''
+
+    };
+
+
+    render() {
+        return (
+            <div className="App">
+                <Form value = {this.state.value}/>
+                <Result />
+            </div>
+        );
+    }
+
 }
 
 export default App;
