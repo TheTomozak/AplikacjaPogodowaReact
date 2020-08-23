@@ -1,2 +1,2 @@
 # AplikacjaPogodowaReact
-Prosta aplikacja pogodowa zrobiona w Reactie wykorzystująca API OpenWeatherMap
+Prosta aplikacja pogodowa robiona w Reactie wykorzystująca API OpenWeatherMap
