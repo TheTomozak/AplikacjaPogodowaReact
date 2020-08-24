@@ -3,6 +3,8 @@ import './App.css';
 import Form from "./Form";
 import Result from "./Result";
 
+const API_KEY = 'b80af7ab94eb83330497a9ffbd5ff6fe';
+
 class App extends Component {
 
 
@@ -15,7 +17,7 @@ class App extends Component {
         temp: '',
         pressure: '',
         wind: '',
-        err: ''
+        err: false
     };
 
 
@@ -28,7 +30,7 @@ class App extends Component {
     handleCitySubmit = (event) => {
         event.preventDefault();
 
-        const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&APPID=b80af7ab94eb83330497a9ffbd5ff6fe&units=metric`;
+        const API = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.value}&APPID=${API_KEY}&units=metric`;
         fetch(API)
             .then(response =>{
                if(response.ok){
@@ -36,8 +38,26 @@ class App extends Component {
                }
                throw Error('Nie udało się')
             }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.warn(err))
+            .then(data => {
+                const dateTime = new Date().toLocaleString();
+                this.setState(prevState =>({    //kiedy używamy aktulanej wartosći to używajmy funkcji to może nas uchronić przed jakimiś błędami
+                    date: dateTime,
+                    sunrise: data.sys.sunrise,
+                    sunset: data.sys.sunset,
+                    temp: data.main.temp,
+                    pressure: data.main.pressure,
+                    wind: data.wind.speed,
+                    cityName: prevState.value,
+                    err: false
+                }))
+            })
+            .catch(err => {
+                console.warn(err);
+                this.setState(prevState => ({
+                    err:true,
+                    cityName: prevState.value
+                }))
+            })
         
         // this.componentDidMount()
 
@@ -65,6 +85,7 @@ class App extends Component {
     // }
 
 
+
     render() {
         return (
             <div className="App">
@@ -73,7 +94,8 @@ class App extends Component {
                     change={this.handleInputChange}
                     submit={this.handleCitySubmit}
                 />
-                <Result/>
+                <Result weather={this.state}/>
+
             </div>
         );
     }
