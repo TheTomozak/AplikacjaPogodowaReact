@@ -96,8 +96,7 @@ class App extends Component {
                     change={this.handleInputChange}
                     submit={this.handleCitySubmit}
                 />
-                <Result weather={this.state}/>
-
+                <Result weather={this.state} name/>
             </div>
         );
     }

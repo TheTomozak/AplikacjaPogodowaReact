@@ -1,4 +1,5 @@
 import React from "react";
+import './Result.css';
 
 
 const Result = (props) => {
@@ -29,7 +30,7 @@ const Result = (props) => {
 
 
         contentForError = (
-            <div>
+            <>
                 <h3>Wyszukiwanie dla miasta: <em>{cityName}</em></h3>
                 <h4>Dane dla dnia i godziny: {date}</h4>
                 <h4>Aktualna temperatura: {temp}°C </h4>
@@ -37,7 +38,7 @@ const Result = (props) => {
                 <h4>Zachód słońca dzisiaj {wordToSunset} o godzinie: {sunsetTime} </h4>
                 <h4>Aktulana siła wiatru: {wind} m/s</h4>
                 <h4>Aktulane ciśnienie: {pressure} hPa</h4>
-            </div>
+            </>
         )
     }
 
