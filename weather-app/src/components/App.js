@@ -17,7 +17,8 @@ class App extends Component {
         temp: '',
         pressure: '',
         wind: '',
-        err: false
+        err: false,
+        timeZone: ''
     };
 
 
@@ -48,7 +49,8 @@ class App extends Component {
                     pressure: data.main.pressure,
                     wind: data.wind.speed,
                     cityName: prevState.value,
-                    err: false
+                    err: false,
+                    timeZone: data.timezone
                 }))
             })
             .catch(err => {
@@ -58,7 +60,7 @@ class App extends Component {
                     cityName: prevState.value
                 }))
             })
-        
+
         // this.componentDidMount()
 
 
