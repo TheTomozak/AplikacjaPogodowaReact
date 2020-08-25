@@ -134,7 +134,8 @@ class App extends Component {
                         console.warn(err);
                         this.setState(prevState => ({
                             err:true,
-                            cityName: prevState.value
+                            cityName: prevState.value,
+                            countryShortcut: ''
                         }))
                     })
 
