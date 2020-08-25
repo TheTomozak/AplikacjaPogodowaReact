@@ -3,7 +3,8 @@ import React from "react";
 const Form = (props) =>{
     return(
         <>
-        <form >
+        <form className={"Form"} >
+            {props.countryShort}
             <input
                 type={"text"}
                 value={props.value}

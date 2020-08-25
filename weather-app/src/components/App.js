@@ -125,7 +125,7 @@ class App extends Component {
                             cityName: prevState.value,
                             err: false,
                             timeZone: data.timezone,
-                            descriptionWeather: data.weather[0].description,
+                            mainWeather: data.weather[0].main,
                             iconWeather: data.weather[0].icon,
                             countryShortcut: data.sys.country
                         }))
@@ -139,9 +139,7 @@ class App extends Component {
                         }))
                     })
 
-
         }
-
 
     }
 
