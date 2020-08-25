@@ -18,7 +18,10 @@ class App extends Component {
         pressure: '',
         wind: '',
         err: false,
-        timeZone: ''
+        timeZone: '',
+        descriptionWeather: '',
+        iconWeather: ''
+
     };
 
 
@@ -50,7 +53,9 @@ class App extends Component {
                     wind: data.wind.speed,
                     cityName: prevState.value,
                     err: false,
-                    timeZone: data.timezone
+                    timeZone: data.timezone,
+                    descriptionWeather: data.weather[0].description,
+                    iconWeather: data.weather[0].icon,
                 }))
             })
             .catch(err => {

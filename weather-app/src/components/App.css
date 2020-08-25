@@ -1,8 +1,9 @@
 * body {
     text-align: center;
-    background-image: url("https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background-image: url("https://wi-images.condecdn.net/image/doEYpG6Xd87/crop/2040/f/weather.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    background-color: #79fffd;
 }
 
 .App input, .App button {
