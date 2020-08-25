@@ -6,7 +6,7 @@ const changeEnToPlDescriptionMap = new Map([
     ['clear sky', 'czyste niebo'],
     ['few clouds', 'pojedyńcze chmury na niebie'],
     ['scattered clouds', 'małe zachmurzenia'],
-    //['broken clouds', 'słońce za chmurami'],
+    ['broken clouds', 'zachmurzenie częściowe'],
     ['shower rain', 'lekkie opady deszczu'],
     ['rain', 'opady deeszczu'],
     ['thunderstorm', 'burza'],
