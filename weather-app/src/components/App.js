@@ -20,7 +20,8 @@ class App extends Component {
         err: false,
         timeZone: '',
         descriptionWeather: '',
-        iconWeather: ''
+        iconWeather: '',
+        countryShortcut:''
 
     };
 
@@ -126,6 +127,7 @@ class App extends Component {
                             timeZone: data.timezone,
                             descriptionWeather: data.weather[0].description,
                             iconWeather: data.weather[0].icon,
+                            countryShortcut: data.sys.country
                         }))
                     })
                     .catch(err => {
@@ -150,6 +152,7 @@ class App extends Component {
                 <Form
                     value={this.state.value}
                     change={this.handleInputChange}
+                    countryShort = {this.state.countryShortcut}
                 />
                 <Result weather={this.state} name/>
             </div>

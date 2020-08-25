@@ -24,3 +24,10 @@
     border-color: black;
 
 }
+
+.Flaga {
+    vertical-align: middle;
+
+}
+
+/*Własność vertical-align określa wyrównanie pionowe elementów inline lub komórek tabeli.*/

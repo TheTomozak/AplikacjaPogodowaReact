@@ -2,6 +2,7 @@ import React from "react";
 
 const Form = (props) =>{
     return(
+        <>
         <form >
             <input
                 type={"text"}
@@ -9,7 +10,11 @@ const Form = (props) =>{
                 placeholder={"Wpisz miasto"}
                 onChange={props.change}
             />
+            <img alt={null} className={"Flaga"} src={props.countryShort ? `https://www.countryflags.io/${props.countryShort}/shiny/64.png` : "" } />
         </form>
+
+        </>
+
     )
 };
 
